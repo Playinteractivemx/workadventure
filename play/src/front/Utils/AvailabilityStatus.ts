@@ -12,15 +12,15 @@ const COLORS: Record<AvailabilityStatus, { filling: number; outline: number }> =
     [AvailabilityStatus.SILENT]: { filling: 0xe74c3c, outline: 0xc0392b },
     [AvailabilityStatus.JITSI]: { filling: 0x68e97a, outline: 0x44d45a },
     [AvailabilityStatus.BBB]: { filling: 0x68e97a, outline: 0x44d45a },
-    [AvailabilityStatus.DENY_PROXIMITY_MEETING]: { filling: 0xffffff, outline: 0x4156f6 },
+    [AvailabilityStatus.DENY_PROXIMITY_MEETING]: { filling: 0xffffff, outline: 0x3c6098 },
     [AvailabilityStatus.UNRECOGNIZED]: { filling: 0xffffff, outline: 0xffffff },
     [AvailabilityStatus.UNCHANGED]: { filling: 0xffffff, outline: 0xffffff },
-    [AvailabilityStatus.BACK_IN_A_MOMENT]: { filling: 0x7382e2, outline: 0x4156f6 },
+    [AvailabilityStatus.BACK_IN_A_MOMENT]: { filling: 0x7382e2, outline: 0x3c6098 },
     [AvailabilityStatus.DO_NOT_DISTURB]: { filling: 0xe96e53, outline: 0xcc5151 },
     [AvailabilityStatus.BUSY]: { filling: 0xe9c84e, outline: 0xd3873b },
     [AvailabilityStatus.LIVEKIT]: { filling: 0x68e97a, outline: 0x44d45a },
     [AvailabilityStatus.LISTENER]: { filling: 0x68e97a, outline: 0x44d45a },
-    [AvailabilityStatus.SOUND_BLOCKED]: { filling: 0x7382e2, outline: 0x4156f6 },
+    [AvailabilityStatus.SOUND_BLOCKED]: { filling: 0x7382e2, outline: 0x3c6098 },
 };
 
 // A peer running an older build sends statuses this one has no colour for, and the
