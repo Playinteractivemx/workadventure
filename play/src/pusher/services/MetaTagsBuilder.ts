@@ -13,11 +13,11 @@ import { ADMIN_API_URL } from "../enums/EnvironmentVariable";
 import { adminService } from "./AdminService";
 
 export const MetaTagsDefaultValue: RequiredMetaTagsData = {
-    title: "WorkAdventure",
+    title: "Arcade · Play.Interactive",
     description:
-        "Organize your online event in WorkAdventure to recreate spontaneous social interactions. Connect, collaborate and have fun with your teammates and attendees.",
-    author: "WorkAdventure team",
-    provider: "WorkAdventure",
+        "La oficina virtual de Play.Interactive.",
+    author: "Play.Interactive",
+    provider: "Play.Interactive",
     favIcons: [
         {
             rel: "icon",
@@ -32,10 +32,10 @@ export const MetaTagsDefaultValue: RequiredMetaTagsData = {
             type: "image/png",
         },
     ],
-    appName: "WorkAdventure",
-    shortAppName: "WA",
+    appName: "Arcade",
+    shortAppName: "Arcade",
     themeColor: "#323945", // PI: fondo de la marca
-    cardImage: "https://workadventu.re/images/general/logo-og.png",
+    cardImage: "https://arcade.playinteractive.mx/static/images/pi/logo-white.png",
 };
 
 export class MetaTagsBuilder {
