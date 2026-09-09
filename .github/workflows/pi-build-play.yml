@@ -1,0 +1,70 @@
+# Play.Interactive Arcade — construye la imagen propia de `play` (frontend + pusher)
+# y la publica en GHCR. back, map-storage y uploader siguen siendo las imágenes oficiales.
+#
+# Etiquetas resultantes en ghcr.io/playinteractivemx/wa-play:
+#   - pi-main            → último push a pi/main
+#   - pi-<sha corto>     → cada commit
+#   - v1.33.5-pi.1       → al empujar un tag con ese formato (base upstream + sufijo propio)
+name: PI · build play image
+
+on:
+  push:
+    branches: [pi/main]
+    tags: ["v*-pi.*"]
+  workflow_dispatch:
+
+concurrency:
+  group: pi-build-play-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Login en GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Etiquetas
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/playinteractivemx/wa-play
+          tags: |
+            type=raw,value=pi-main,enable=${{ github.ref == 'refs/heads/pi/main' }}
+            type=sha,prefix=pi-,format=short
+            type=ref,event=tag
+
+      - name: Build y push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./
+          file: play/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=ghcr.io/playinteractivemx/wa-play:buildcache
+          cache-to: type=registry,ref=ghcr.io/playinteractivemx/wa-play:buildcache,mode=max
+          # El Dockerfile monta estos secretos; sin Sentry van vacíos.
+          secrets: |
+            "SENTRY_PROJECT="
+            "SENTRY_URL="
+            "SENTRY_AUTH_TOKEN="
+            "SENTRY_ORG="
+            "SENTRY_ENVIRONMENT="
+            "SENTRY_RELEASE=${{ github.ref_name }}"
+          provenance: false
+          sbom: false
