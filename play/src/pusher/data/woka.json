@@ -2102,15 +2102,15 @@
             "position": 0
           },
           {
-            "id": "pi-barba-corta-castaño-oscuro",
+            "id": "pi-barba-corta-castano-oscuro",
             "name": "Barba corta · castaño oscuro",
-            "url": "resources/customisation/pi_barbas/pi-barba-corta-castaño-oscuro.png",
+            "url": "resources/customisation/pi_barbas/pi-barba-corta-castano-oscuro.png",
             "position": 1
           },
           {
-            "id": "pi-barba-corta-castaña",
+            "id": "pi-barba-corta-castana",
             "name": "Barba corta · castaña",
-            "url": "resources/customisation/pi_barbas/pi-barba-corta-castaña.png",
+            "url": "resources/customisation/pi_barbas/pi-barba-corta-castana.png",
             "position": 2
           },
           {
@@ -2126,15 +2126,15 @@
             "position": 4
           },
           {
-            "id": "pi-barba-candado-castaño-oscuro",
+            "id": "pi-barba-candado-castano-oscuro",
             "name": "Candado · castaño oscuro",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-castaño-oscuro.png",
+            "url": "resources/customisation/pi_barbas/pi-barba-candado-castano-oscuro.png",
             "position": 5
           },
           {
-            "id": "pi-barba-candado-castaña",
+            "id": "pi-barba-candado-castana",
             "name": "Candado · castaña",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-castaña.png",
+            "url": "resources/customisation/pi_barbas/pi-barba-candado-castana.png",
             "position": 6
           },
           {
