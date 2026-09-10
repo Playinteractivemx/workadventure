@@ -20,15 +20,18 @@
     import { getNavigatorType, isAndroid, NavigatorType } from "../../../WebRtc/DeviceUtils";
 
     const cameraButtonStateStore: Readable<"active" | "disabled" | "normal" | "forbidden"> = derived(
-        [availabilityStatusStore, requestedCameraState, cameraListStore],
-        ([$availabilityStatusStore, $requestedCameraState, $cameraListStore]) => {
+        // silentStore va en las dependencias: se consulta abajo, y sin declararlo
+        // el derived no se recalcula al entrar o salir de la zona de concentración,
+        // así que el botón se quedaba con el estado anterior.
+        [availabilityStatusStore, requestedCameraState, cameraListStore, silentStore],
+        ([$availabilityStatusStore, $requestedCameraState, $cameraListStore, silent]) => {
             if (
                 $availabilityStatusStore === AvailabilityStatus.BUSY ||
                 $availabilityStatusStore === AvailabilityStatus.AWAY ||
                 $availabilityStatusStore === AvailabilityStatus.BACK_IN_A_MOMENT ||
                 $availabilityStatusStore === AvailabilityStatus.SOUND_BLOCKED ||
                 $availabilityStatusStore === AvailabilityStatus.DO_NOT_DISTURB ||
-                $silentStore === true ||
+                silent === true ||
                 ($cameraListStore !== undefined && $cameraListStore.length === 0)
             ) {
                 return "disabled";

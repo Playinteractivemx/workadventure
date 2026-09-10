@@ -19,15 +19,18 @@
     import MicOffIcon from "../../Icons/MicOffIcon.svelte";
 
     const microphoneButtonStateStore: Readable<"active" | "disabled" | "normal" | "forbidden"> = derived(
-        [availabilityStatusStore, requestedMicrophoneState, microphoneListStore],
-        ([$availabilityStatusStore, $requestedMicrophoneState, $microphoneListStore]) => {
+        // silentStore va en las dependencias: se consulta abajo, y sin declararlo
+        // el derived no se recalcula al entrar o salir de la zona de concentración,
+        // así que el botón se quedaba con el estado anterior.
+        [availabilityStatusStore, requestedMicrophoneState, microphoneListStore, silentStore],
+        ([$availabilityStatusStore, $requestedMicrophoneState, $microphoneListStore, silent]) => {
             if (
                 $availabilityStatusStore === AvailabilityStatus.BUSY ||
                 $availabilityStatusStore === AvailabilityStatus.AWAY ||
                 $availabilityStatusStore === AvailabilityStatus.BACK_IN_A_MOMENT ||
                 $availabilityStatusStore === AvailabilityStatus.SOUND_BLOCKED ||
                 $availabilityStatusStore === AvailabilityStatus.DO_NOT_DISTURB ||
-                $silentStore === true ||
+                silent === true ||
                 ($microphoneListStore !== undefined && $microphoneListStore.length === 0)
             ) {
                 return "disabled";
