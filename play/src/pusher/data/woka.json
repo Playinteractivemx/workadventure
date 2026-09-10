@@ -2120,27 +2120,27 @@
             "position": 3
           },
           {
-            "id": "pi-barba-candado-negra",
-            "name": "Candado · negra",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-negra.png",
+            "id": "pi-barba-perilla-negra",
+            "name": "Perilla · negra",
+            "url": "resources/customisation/pi_barbas/pi-barba-perilla-negra.png",
             "position": 4
           },
           {
-            "id": "pi-barba-candado-castano-oscuro",
-            "name": "Candado · castaño oscuro",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-castano-oscuro.png",
+            "id": "pi-barba-perilla-castano-oscuro",
+            "name": "Perilla · castaño oscuro",
+            "url": "resources/customisation/pi_barbas/pi-barba-perilla-castano-oscuro.png",
             "position": 5
           },
           {
-            "id": "pi-barba-candado-castana",
-            "name": "Candado · castaña",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-castana.png",
+            "id": "pi-barba-perilla-castana",
+            "name": "Perilla · castaña",
+            "url": "resources/customisation/pi_barbas/pi-barba-perilla-castana.png",
             "position": 6
           },
           {
-            "id": "pi-barba-candado-gris",
-            "name": "Candado · gris",
-            "url": "resources/customisation/pi_barbas/pi-barba-candado-gris.png",
+            "id": "pi-barba-perilla-gris",
+            "name": "Perilla · gris",
+            "url": "resources/customisation/pi_barbas/pi-barba-perilla-gris.png",
             "position": 7
           }
         ]
