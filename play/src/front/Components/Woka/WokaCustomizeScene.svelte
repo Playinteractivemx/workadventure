@@ -40,6 +40,20 @@
 
     const bodyPartOrder: WokaBodyPart[] = ["body", "eyes", "hair", "clothes", "hat", "accessory"];
 
+    // Las pestañas mostraban la clave cruda en inglés ("body", "hat"...) aun con la interfaz
+    // en español. No van por i18n porque el tipo Translation lo genera typesafe-i18n y añadir
+    // claves obliga a regenerarlo; el equipo de Arcade trabaja en español.
+    // "hat" y "accessory" alojan además las barbas y las gafas de Play.Interactive, así que
+    // el rótulo lo dice para que se encuentren.
+    const nombreCapa: Record<WokaBodyPart, string> = {
+        body: "Piel",
+        eyes: "Ojos",
+        hair: "Pelo",
+        clothes: "Ropa",
+        hat: "Barba y sombrero",
+        accessory: "Gafas y accesorios",
+    };
+
     async function loadWokaData() {
         try {
             isLoading = true;
@@ -324,7 +338,7 @@
                                     strokeColor={selectedBodyPart === bodyPart ? "stroke-white " : "stroke-white/50"}
                                     fillColor={selectedBodyPart === bodyPart ? "fill-white " : "fill-white/50"}
                                 />
-                                {bodyPart}
+                                {nombreCapa[bodyPart]}
                             </button>
                         {/each}
                     </div>
@@ -348,7 +362,7 @@
                                     strokeColor={selectedBodyPart === bodyPart ? "stroke-white " : "stroke-white/50"}
                                     fillColor={selectedBodyPart === bodyPart ? "fill-white " : "fill-white/50"}
                                 />
-                                {bodyPart}
+                                {nombreCapa[bodyPart]}
                             </button>
                         {/each}
                     </div>
