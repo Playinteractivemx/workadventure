@@ -40,5 +40,40 @@
         "url": "resources/characters/pipoya/Cat 01-3.png"
       }
     ]
+  },
+  {
+    "name": "Play.Interactive",
+    "textures": [
+      {
+        "id": "pi-dog-labrador-dorado",
+        "name": "Labrador dorado",
+        "behavior": "dog",
+        "url": "resources/characters/pi_perros/pi-dog-labrador-dorado.png"
+      },
+      {
+        "id": "pi-dog-labrador-negro",
+        "name": "Labrador negro",
+        "behavior": "dog",
+        "url": "resources/characters/pi_perros/pi-dog-labrador-negro.png"
+      },
+      {
+        "id": "pi-dog-salchicha",
+        "name": "Salchicha",
+        "behavior": "dog",
+        "url": "resources/characters/pi_perros/pi-dog-salchicha.png"
+      },
+      {
+        "id": "pi-dog-beagle",
+        "name": "Beagle",
+        "behavior": "dog",
+        "url": "resources/characters/pi_perros/pi-dog-beagle.png"
+      },
+      {
+        "id": "pi-dog-pug",
+        "name": "Pug",
+        "behavior": "dog",
+        "url": "resources/characters/pi_perros/pi-dog-pug.png"
+      }
+    ]
   }
 ]
